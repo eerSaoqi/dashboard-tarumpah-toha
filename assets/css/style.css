@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    /* Palet: Coklat Tua & Putih Bersih */
+    --main-brown: #3e2723;
+    --light-brown: #5d4037;
+    --pure-white: #ffffff;
+    --off-white: #f8f9fa;
+    --accent-gold: #d4a373;
+    --text-dark: #1a1a1a;
+    --text-muted: #6c757d;
+}
+
+body {
+    background-color: var(--off-white);
+    color: var(--text-dark);
+    font-family: 'Inter', sans-serif;
+    overscroll-behavior: none;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.card-gradient {
+    background: var(--pure-white);
+    border: 1px solid rgba(62, 39, 35, 0.1);
+    box-shadow: 0 4px 12px rgba(62, 39, 35, 0.05);
+    transition: all 0.3s ease;
+}
+
+.card-gradient:hover {
+    box-shadow: 0 8px 24px rgba(62, 39, 35, 0.12);
+}
+
+.sidebar-active {
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 4px solid var(--accent-gold);
+    color: white !important;
+}
+
+.btn-primary {
+    background: var(--main-brown);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: var(--light-brown);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(62, 39, 35, 0.3);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--off-white);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--main-brown);
+    border-radius: 10px;
+
+}
+
+@media print {
+
+    aside,
+    header,
+    .no-print,
+    .no-export,
+    .no-scrollbar,
+    form,
+    .ml-auto.flex.gap-2,
+    button,
+    a[href*="range="] {
+        display: none !important;
+    }
+
+    main {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .card-gradient {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+        page-break-inside: avoid;
+    }
+
+    .print-title {
+        display: block !important;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+}
+
+.print-title {
+    display: none;
+}
